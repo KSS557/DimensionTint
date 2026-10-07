@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "dimensiontint",
+	"version": "${version}",
+	"name": "Dimension Tint",
+	"description": "This mod displays colors in the player list based on their dimension",
+	"authors": [
+		"KSS557"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT License",
+	"icon": "assets/dimensiontint/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "net.kss557.dimensiontint.DimensionTint",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "net.kss557.dimensiontint.client.DimensionTintClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"dimensiontint.mixins.json",
+		{
+			"config": "dimensiontint.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.1.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	}
+}
